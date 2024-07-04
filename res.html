@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Foodie India</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
+
+</head>
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: orange;
+
+
+    
+}
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+input[type="text"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+ img{
+            width: 120px;
+            height: auto;
+            margin:bottom;
+            margin-left: 680px;
+            padding-bottom: px;
+            top: 0px;
+          }
+        </style>
+<body>
+
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand"href="#">Foodie India</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="#">Order</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="#">Contact</a></li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/res"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+                    </li>
+                    <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <body>
+             <div class="col-2">
+                <img src="/static/image/image1.png" width="15%">
+            </div>
+    <div class="container">
+        <h2>Food Delivery Registration</h2>
+        <form action="{% url 'res'%}" method="post">
+            {% csrf_token %}
+            <input type="text" id="username" placeholder="username" name= "username" required><br>
+            <input type="text" id="first_name" placeholder="first_name" name="first_name" required><br>
+            <input type="text" id="last_name" placeholder="last_name" name="last_name" required><br>
+            <!--<input type="text" id="phone" placeholder="Phone Number" required pattern="[0-9]{10}"><br>!-->
+            <input type="text" id="email" placeholder="email" name="email" required><br>
+
+            
+            <!--<select id="gender" required>
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select><br>!-->
+            <!--<input type="text" id="address" placeholder="Address" required><br>!-->
+            <input type="password" id="password1" placeholder="password1" name="password1" required><br>
+            <input type="password" id="password2" placeholder=" password2" name="password2" required><br>
+            {% if form.errors %}
+            <div class="error-message">
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        {% endif %}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
