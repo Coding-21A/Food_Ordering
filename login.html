@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Foodie India</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{%static 'css/login.css'%}">
+
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: orange;
+    
+    
+        
+    }
+    .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 400px;
+    }
+    input[type="text"],
+    input[type="password"],
+    select {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 15px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 10px;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+     img{
+                width: 120px;
+                height: auto;
+                margin:bottom;
+                margin-left: 680px;
+                padding-bottom: px;
+                top: 0px;
+              }
+</style>
+<body>
+
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand"href="{% url 'home' %}">Foodie India</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="/atc">Order</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="Register.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+                    </li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+             <div class="col-2">
+                <img src="/static/image/image1.png" width="15%">
+            </div>
+    <div class="container">
+        <h2>Food Delivery Registration</h2>
+        <form id="loginform" method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <input type="text" id="username" placeholder="username"  name="username" required><br>
+            <input type="text" id="password" placeholder="password" name="password" required><br>
+
+            <button type="submit" class="btn">Login</button>
+            <div class="line">
+        <button><a href="{% url 'forgetpass' %}" type="Forget Password">Forget Password</a></button>
+      </div>
+
+      <div class="line-2">
+        <label for="I don't have an account">I don't have an account</label>
+        <button><a href=" {% url 'res' %}" type="Create Account">Create Account</a></button>
+      </div>
+        </form>
+    </div>
+</body>
+</html>
