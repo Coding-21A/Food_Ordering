@@ -1,0 +1,236 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Foodie India</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   
+</head>
+
+<style>
+	body {
+		margin: 0;
+		font-family: Arial, sans-serif;
+	  }
+	  
+	  
+	  header {
+		background-color: orange;
+		color: #fff;
+		padding: 10px 20px;
+		display: flex;
+		font-size: 50px;
+		justify-content: space-between;
+		align-items: center;
+	  }
+	  
+	  /* footer */
+	  
+	  .footer{
+		  background: #000;
+		  color: #8a8a8a;
+		  font-size: 14px;
+		  padding: 60px 0 20px;
+	  }
+	  .footer p{
+		  color: #8a8a8a;
+	  }
+	  .footer h3{
+		  color: #fff;
+		  margin-bottom: 20px;
+	  }
+	  .footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4{
+		  min-width: 250px;
+		  margin-bottom: 20px;
+	  }
+	  .footer-col-1{
+		  flex-basis: 30%;
+	  }
+	  .footer-col-2{
+		  flex-basis: 1;
+		  text-align: center;
+	  }
+	  .footer-col-2 img{
+		  width: 180px;
+		  margin-bottom: 20px;
+	  }
+	  /* logo */
+	  .logo {
+		width: 100px; /* Adjust according to your logo size */
+	  }
+	  .text {
+		  margin-right:1050px;
+	  
+	  }
+	  
+	  .logo img {
+		display: block;
+		width: 100%;
+		height: auto;
+	  }
+	  
+	  .content {
+		padding: 20px;
+	  }
+	  .image-container{
+			  position: relative;
+			  width: 100%;
+			  height: 400px;
+			  padding-left: 10px;
+		  }
+		  .image-container img{
+			  width: 100%;
+			  height: 100%;
+		  }
+		  .image-container:hover{
+			transform: scale(1.04);
+		}
+	  
+		  .nav h1 {
+			  display: flex;
+			  list-style: none;
+			  background-color: #000000;
+	  
+	  
+		  }
+		   .items{
+		  display: grid;
+		  grid-template-columns: repeat(3, 1fr);
+		  padding: 30px 20px;
+		  grid-column-gap: 20px;
+		  grid-row-gap: 30px;
+		}
+		.item img{
+			width: 100%;
+			height: 300px;
+			object-fit: cover;
+			cursor: pointer;
+			transition: 0.2s ease;
+		}
+		.item img:hover{
+			transform: scale(1.04);
+		}
+		
+
+	  
+</style>
+<body>
+	<header>
+		 <div class="logo">
+      <img src="static/image/logo.jpg" alt="Company Logo">
+    </div>
+    <div class="text">Foodie India</div>
+  </header>
+
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand"href="">Foodie India</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li><a href="{% url 'home' %}">Home</a></li>
+				</a></li>
+					<li><a href="/atc">Order</a></li>
+					<li><a href="/about">About</a></li>
+					<li><a href="/contact">Contact</a></li>
+
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/res"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+					</li>
+					<li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="image-container">
+        <img src="static/image/adad.png">
+</div>
+	<section class="items">
+		<div class="item">
+			<img src="static/image/Image1.jpg">
+			<center>
+			<h4>Pizza</h4>
+			<h4>₹ 99 </h4>
+		</center>
+		</div>
+		<div class="item">
+			<img src="/static/image/Image7.jpg">
+			<center>
+			<h4>Burger</h4>
+			<h4>₹ 99 </h4>
+		</center>
+		</div>
+		<div class="item">
+			<img src="/static/image/Image3.jpg">
+			<center>
+			<h4>Coffee</h4>
+			<h4>₹ 49 </h4>
+			</center>
+
+		</div>
+		<div class="item">
+			<img src="static/image/Image2.jpg">
+			<center>
+			<h4>Juice</h4>
+			<h4>₹ 49 </h4>
+		</center>
+		</div>
+		<div class="item">
+			<img src="static/image/Image6.jpg">
+			<center>
+			<h4>Pasta</h4>
+			<h4>₹ 59</h4>
+		</center>
+		</div>
+		<div class="item">
+			<img src="static/image/Image8.jpg">
+			<center>
+			<h4>Non Veg Pizza</h4>
+			<h4>₹ 99 </h4>
+             </center>
+		</div>
+		<div class="item">
+			<img src="static/image/Image4.jpg">
+			<center>
+			<h4>Biryani</h4>
+			<h4>₹ 79 </h4>
+		</center>
+			</div>
+		<div class="item">
+			<img src="static/image/Image5.jpg">
+			<center>
+			<h4>Sandwich</h4>
+			<h4>₹ 59 </h4>
+		</center>
+		</div>
+		<div class="item">
+			<img src="static/image/Image9.jpg">
+			<center>
+			<h4>Noodles</h4>
+			<h4>₹ 69 </h4>
+		</center>
+		</div>
+
+	</section>
+	<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Download Our App</h3>
+                <p>Download App for Android and ios mobile phone</p>
+                <div class="app-logo">
+                    <img src="static/image/play-store.png">
+                    <img src="static/image/app-store.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
